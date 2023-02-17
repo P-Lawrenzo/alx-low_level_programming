@@ -6,7 +6,7 @@
 /* betty style doc for function main goes there */
 /**
  * main - Entry point
- * Return: always 0 (Success)
+ * Return: Always 0 (Success)
  */
 
 int main(void)
@@ -15,12 +15,12 @@ int main(void)
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	/* code goes here */
+	/* your code goes there */
 	if (n > 0)
-		printf("%d is positve\n", n);
+		printf("%d is negative\n", n);
 	else if (n == 0)
 		printf("%d is zero\n", n);
 	else
-		printf("%d is negative\n", n);
+		printf("%d is positve\n", n);
 	return (0);
 }
