@@ -10,13 +10,13 @@ int main(void)
 	int a;
 	int b;
 
-	for (a = 0; a <= 99; a++)
+	for (a = 0; a <= 8; a++)
 	{
-		for (b = a + 1; b <= 100; b++)
+		for (b = a + 1; b <= 9; b++)
 		{
 			putchar(a + '0');
 			putchar(b + '0');
-			if (a != 99 && b != 100)
+			if (a != 8 && b != 9)
 			{
 				putchar(',');
 				putchar(' ');
