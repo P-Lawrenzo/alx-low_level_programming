@@ -2,10 +2,9 @@
 /**
  * main - print the size of various types based on
  * the computer it is compiled and run on..
- * return Always 0 (success).
+ * Return: 0 to indicate success
  */
-
-int main(void)
+int main(void);
 {
 	printf("Size of a char: %lu byte(s)\n", sizeof(char));
 	printf("Size of an int: %lu byte(s)\n", sizeof(int));
