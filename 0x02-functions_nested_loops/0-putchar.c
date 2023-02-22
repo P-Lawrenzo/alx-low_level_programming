@@ -1,8 +1,8 @@
 #include "main.h"
 /**
- * main - print _putchar
- * written by peter.u
- * Return: 0
+ * main - A program that prints _putchar
+ * written by Peter.U
+ * Return: Always 0 (Success)
  */
 
 int main(void)
@@ -18,4 +18,3 @@ int main(void)
 	_putchar('\n');
 	return (0);
 }
-
