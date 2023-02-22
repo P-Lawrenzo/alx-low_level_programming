@@ -3,6 +3,7 @@
 /**
  * print_to_98 - print all natural num from n to 98
  * @n: The num to start printing from
+ *
  * Return: Always 0.
  */
 
@@ -15,13 +16,14 @@ void print_to_98(int n)
 	for (i = n; i < 98; i++)
 	{
 	printf("%d, ", i);
-	
-	if (n <= 98)
-	
+	}
+	}
+	else
+	{
 	for (i = n; i > 98; i--)
-	
+	{
 	printf("%d, ", i);
 	}
 	}
-	printf("98\n");
+	printf("%d\n", 98);
 }
