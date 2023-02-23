@@ -1,20 +1,21 @@
-#include "main.h"
 #include <stdio.h>
 /**
- * main - Computer & prints the sum of multiples 3 or 5.
- * @sum: multiple below 1024 excluded
+ * main - prints all the sum of the multiples 3 or 5 to 1024
+ *
  * Return: Always 0
  */
 
-int main(int sum)
+int main(void)
 {
+	int i, j = 0;
+
 	for (int i = 1; i < 1024; i++)
 	{
 	if (i % 3 == 0 || i % 5 == 0)
 	{
-	sum += i;
+	j += i;
 	}
 	}
-	printf("%d\n", sum);
+	printf("%d\n", j);
 	return (0);
 }
