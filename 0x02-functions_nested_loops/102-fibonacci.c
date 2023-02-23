@@ -7,21 +7,23 @@
 
 int main(void)
 {
-	int fibonacci[50];
+int i = 0;
+long j = 1, k = 2;
 
-	fibonacci[0] = 1;
-	fibonacci[1] = 2;
-
-	for (int i = 2; i < 50; i++)
-	{
-	fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
-	}
-	for (int i = 0; i < 49; i++)
-	{
-	printf("%d, ", fibonacci[i]);
-	}
-	printf("%d\n", fibonacci[49]);
-
-	return (0);
+while (i <= 50)
+{
+if (i == 0)
+printf("%ld", j);
+else if (i == 1)
+printf(",%ld", k);
+else
+{
+k += j;
+j = k - j;
+printf(",%ld", k);
 }
-
+++i;
+}
+printf("\n");
+return (0);
+}
