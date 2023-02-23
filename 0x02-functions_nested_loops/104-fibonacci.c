@@ -6,25 +6,19 @@
 
 int main(void)
 {
-	int first = 1;
-	int second = 2;
-	int next;
+	int a = 1, b = 2, c;
+	int count = 0;
 
-	printf("%d, %d, ", first, second);
-
-	for (int i = 3; i <= 98; i++)
+	printf("%d, %d", a, b);
+	count += 2;
+	while (count < 98)
 	{
-	next = first + second;
-	first = second;
-	second = next;
-	printf("%d", next);
-
-	if (i != 98)
-	{
-	printf(", ");
+	c = a + b;
+	printf(", %d", c);
+	a = b;
+	b = c;
+	count++;
 	}
-	}
-
 	printf("\n");
 	return (0);
 }
