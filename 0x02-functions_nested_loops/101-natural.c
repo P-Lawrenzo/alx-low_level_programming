@@ -9,12 +9,13 @@ int main(void)
 {
 	int i, j = 0;
 
-	for (int i = 1; i < 1024; i++)
+	while (i < 1024)
 	{
-	if (i % 3 == 0 || i % 5 == 0)
+	if ((i % 3 == 0) || (i % 5 == 0))
 	{
 	j += i;
 	}
+	i++;
 	}
 	printf("%d\n", j);
 	return (0);
