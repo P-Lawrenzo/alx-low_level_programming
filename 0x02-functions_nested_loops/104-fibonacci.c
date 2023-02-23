@@ -7,11 +7,11 @@
 int main(void)
 {
 	int a = 1, b = 2, c;
-	int count = 0;
+	int count = 1;
 
 	printf("%d, %d", a, b);
 	count += 2;
-	while (count < 98)
+	while (count < 99)
 	{
 	c = a + b;
 	printf(", %d", c);
