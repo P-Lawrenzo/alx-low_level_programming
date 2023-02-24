@@ -1,4 +1,5 @@
-C-programming;
+C-programming:
+
 	Fundamentals:
 		Hello world
 	
