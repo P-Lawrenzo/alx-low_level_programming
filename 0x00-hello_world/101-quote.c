@@ -5,6 +5,9 @@
 */
 int main(void)
 {
-	fputs("and that piece of art is useful\" - Dora Korpar, 2015-10-19\n", stdout);
+	char quote[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19";
+	
+	fwrite(2, quote, sizeof(quote) - 1);
+
 	return (1);
 }
