@@ -38,5 +38,5 @@ void print_remaining_days(int month, int day, int year)
 	}
 
 	printf("Day of the year: %d\n", day_of_year);
-	printf("Remaining days: %d\n", 365 + (days_in_feb == 29 ? 1 : 0) - day_of_year);
+	printf("Remaining days: %d\n", 365 day);
 }
