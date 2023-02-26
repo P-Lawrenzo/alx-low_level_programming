@@ -11,37 +11,35 @@
 
 void print_remaining_days(int month, int day, int year)
 {
-int days_in_month[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-int total_days = 0;
-int i;
+int days_in_feb = 28;
 
-for (i = 0; i < month - 1; i++)
+if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
 {
-total_days += days_in_month[i];
+days_in_feb = 29;
 }
-
-total_days += day;
-
-if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
+if (month < 1 || month > 12)
 {
-if (month > 2)
-{
-total_days++;
+printf("Invalid date: %02d/%02d/%04d\n", month, day, year);
 }
-printf("Day of the year: %d\n", total_days);
-printf("Remaining days: %d\n", 366 - total_days);
-}
-else
+else if (day < 1 || day > 31)
 {
-if (month == 2 && day == 29)
+printf("Invalid date: %02d/%02d/%04d\n", month, day, year);
+}
+else if ((month == 2 && day > days_in_feb) ||(month == 4 || month == 6 || month == 9 || month == 11) && day == 31))
 {
 printf("Invalid date: %02d/%02d/%04d\n", month, day, year);
 }
 else
 {
-printf("Day of the year: %d\n", total_days);
-printf("Remaining days: %d\n", 365 - total_days);
+day = convert_day(month, day);
+
+if (days_in_feb == 28 && month >= 3)
+{
+day--;
 }
+
+printf("Day of the year: %d\n", day);
+printf("Remaining days: %d\n", 365 + (days_in_feb == 29) - day);
 }
 }
 
