@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <stdio.h>
 /**
  * print_rev - Prints a string in reverse order followed by a new line
  *
@@ -18,4 +18,3 @@ void print_rev(char *s)
 
 	_putchar('\n'); /* Print newline character */
 }
-
