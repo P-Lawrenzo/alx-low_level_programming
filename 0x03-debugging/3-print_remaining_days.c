@@ -34,14 +34,4 @@ void print_remaining_days(int month, int day, int year)
 			printf("Remaining days: %d\n", 365 - day);
 		}
 	}
-	else
-	{
-		if (month > 2 && days_in_month[2] == 29)
-		{
-			days++;
-		}
-
-		printf("Day of the year: %d\n", days);
-		printf("Remaining days: %d\n", days_in_month[month] - day + (days_in_month[2] == 29 ? 1 : 0));
-	}
 }
