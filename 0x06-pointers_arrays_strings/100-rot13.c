@@ -2,27 +2,27 @@
 /**
  * rot13 - encodes a string using rot13.
  * @s: pointer to string params
- * Return: p
+ * Return: *s
  */
 
 char *rot13(char *s)
 {
-	char *p = s;
 	int i;
-
-	for (i = 0; s[i]; i++)
+	int j;
+	char data1[] =
+	"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char datarot[] =
+		"NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	for (i = 0; s[i] != '\0'; i++)
 	{
-	if (s[i] >= 'a' && s[i] <= 'z')
-	{
-	s[i] -= 'a';
-	s[i] = ((s[i] + 13) % 26) + 'a';
+		for (j = 0; j < 52; j++)
+		{
+			if (s[i] == data1[j])
+			{
+				s[i] = datarot[j];
+					break;
+			}
+		}
 	}
-	else if (s[i] >= 'A' && s[i] <= 'Z')
-	{
-	s[i] -= 'A';
-	s[i] = ((s[i] + 13) % 26) + 'A';
-	}
-	}
-
-	return (p);
+	return (s);
 }
