@@ -2,24 +2,28 @@
 /**
  * _strcat - concatenates two strings
  * @dest: find length
+ * @src: input value
  * Return: pointer to dest
  */
 
 char *_strcat(char *dest, char *src)
 {
-	char *temp = dest;
+	int i;
+	int j;
 
-	while (*dest)
+	i = 0;
+	while (dest[i] != '\0')
 	{
-	dest++;
+		i++;
 	}
-
-	while (*src)
+	j = 0;
+	while (src[j] != '\0')
 	{
-	*dest++ = *src++;
+		dest[i] = src[j];
+		i++;
+		j++;
 	}
-
-	*dest = '\0';
-
-	return (temp);
+	
+	dest[i] = '\0';
+	return (dest);
 }
