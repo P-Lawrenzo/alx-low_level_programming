@@ -1,15 +1,23 @@
 #include <stdio.h>
-/**
- * main -  prints a[2] = 98, followed by a new line.
- * @a: integer value
- * Return: 0
- */
-int main(int a)
+
+int main(void)
 {
-	int a[] = {4, 8, 98, 12, 67};
-	int *p = &a{0];
+  int n;
+  int a[5];
+  int *p;
 
-	printf("a[2] = %di\n", *(p + 2);
-
-	return (0);
+  a[2] = 1024;
+  p = &n;
+  /*
+   * write your line of code here...
+   * Remember:
+   * - you are not allowed to use a
+   * - you are not allowed to modify p
+   * - only one statement
+   * - you are not allowed to code anything else than this line of code
+   */
+ *(a + 2) = 98;
+  /* ...so that this prints 98\n */
+  printf("a[2] = %d\n", a[2]);
+  return (0);
 }
