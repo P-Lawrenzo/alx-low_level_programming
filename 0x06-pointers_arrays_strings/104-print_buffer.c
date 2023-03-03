@@ -9,9 +9,10 @@
 
 void print_buffer(char *b, int size)
 {
-	int o = 0;
-	int i;
-	int j;
+	int o, j, i;
+       
+	o = 0;
+
 
 	if (size <= 0)
 	{
@@ -40,7 +41,7 @@ void print_buffer(char *b, int size)
 	{
 		int c = *(b + o + i);
 
-		if (c < 32 || c > 132)
+		if (c < 32 || c > 126)
 			c = ',';
 
 		printf("%c", c);
