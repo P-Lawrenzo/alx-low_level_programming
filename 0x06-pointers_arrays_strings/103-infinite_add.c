@@ -1,54 +1,46 @@
 #include "main.h"
-#include "holberton.h"
+#include <stdio.h>
+#include <string.h>
 
 /**
  * infinite_add - adds two numbers
  * @n1: first number to add
  * @n2: second number to add
- * @r: buffer to store the result
- * @size_r: size of the buffer
+ * @r: buffer to store result
+ * @size_r: size of buffer
  *
- * Return: pointer to the result, or 0 if the result cannot be stored in r
+ * Return: pointer to the result, or 0 if buffer too small
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int overflow = 0, i = 0, j = 0, digits = 0;
-	int val1 = 0, val2 = 0, temp_tot = 0;
+	int len1 = strlen(n1);
+	int len2 = strlen(n2);
+	int carry = 0;
+	int i, j, k;
 
-	while (*(n1 + i) != '\0')
-		i++;
-	while (*(n2 + j) != '\0')
-		j++;
+	if (len1 + 1 > size_r || len2 + 1 > size_r)
+	return (0);
 
-	i--;
-	j--;
-	if (j >= size_r || i >= size_r)
-		return (0);
-	while (j >= 0 || i >= 0 || overflow == 1)
+	for (i = len1 - 1, j = len2 - 1, k = 0; i >= 0 || j >= 0 || carry;
+			i--, j--, k++)
 	{
-		if (i < 0)
-			val1 = 0;
-		else
-			val1 = *(n1 + i) - '0';
-		if (j < 0)
-			val2 = 0;
-		else
-			val2 = *(n2 + j) - '0';
-		temp_tot = val1 + val2 + overflow;
-		if (temp_tot >= 10)
-			overflow = 1;
-		else
-			overflow = 0;
-		if (digits >= (size_r - 1))
-			return (0);
-		*(r + digits) = (temp_tot % 10) + '0';
-		digits++;
-		j--;
-		i--;
+	int digit1 = i >= 0 ? n1[i] - '0' : 0;
+	int digit2 = j >= 0 ? n2[j] - '0' : 0;
+	int sum = digit1 + digit2 + carry;
+
+	carry = sum / 10;
+	r[k] = (sum % 10) + '0';
 	}
-	if (digits == size_r)
-		return (0);
-	*(r + digits) = '\0';
-	rev_string(r);
+	r[k] = '\0';
+
+	for (i = 0, j = k - 1; i < j; i++, j--)
+	{
+	char temp = r[i];
+
+	r[i] = r[j];
+	r[j] = temp;
+	}
+
 	return (r);
 }
+
